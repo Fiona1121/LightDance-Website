@@ -91,26 +91,29 @@
 .wrapper .email:hover .tooltip,
 .wrapper .email:hover .tooltip::before {
     background-color: #46c1f6;
-    color: #ffffff;
-}
-
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
-    background-color: #e1306c;
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .wrapper .github:hover,
 .wrapper .github:hover .tooltip,
 .wrapper .github:hover .tooltip::before {
     background-color: #333333;
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .wrapper .youtube:hover,
 .wrapper .youtube:hover .tooltip,
 .wrapper .youtube:hover .tooltip::before {
     background-color: #de463b;
-    color: #ffffff;
+    color: #ffffff !important;
+}
+
+.fab {
+    color: black;
+}
+
+.wrapper .email:hover .fab,
+.wrapper .github:hover .fab,
+.wrapper .youtube:hover .fab {
+    color: white;
 }
