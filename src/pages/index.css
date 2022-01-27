@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    font-weight: 300;
+    font-family: Roboto !important;
+    letter-spacing: 0.2rem;
+    color: white;
+}
+
+.header {
+    height: 100vh;
+    text-align: center;
+    padding: 30px;
+}
+
+.section {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.enter-button {
+    text-align: center;
+    transition-duration: 0.5s;
+    margin-bottom: 70px;
+    font-size: 2rem;
+}
+
+.enter-button:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
