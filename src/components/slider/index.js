@@ -20,6 +20,7 @@ const Slider = ({ introRef }) => {
                                 }
                             }
                             caption
+                            discription
                             sectionLink
                         }
                     }
@@ -90,7 +91,7 @@ const Slider = ({ introRef }) => {
                                     data-target="#js-header"
                                 >
                                     <h1 className="slideshow__slide-caption-title">{slide.caption}</h1>
-                                    <p className="slideshow__slide-caption-subtitle">{slide.discription}</p>
+                                    <p className="slideshow__slide-discription">{slide.discription}</p>
                                     <a
                                         className="slideshow__slide-caption-subtitle -load o-hsub -link"
                                         href={slide.sectionLink}

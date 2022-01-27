@@ -282,7 +282,7 @@
 @media (max-width: 699px) {
     .slideshow__slide-caption-title {
         font-size: 40px;
-        margin-bottom: 150px;
+        margin-bottom: 1rem;
     }
     .slideshow.-full .slideshow__slide-caption-title {
         margin-bottom: 30px;
@@ -292,7 +292,7 @@
 @media (min-width: 700px) {
     .slideshow__slide-caption-title {
         font-size: 5.625rem;
-        margin-bottom: 1.25rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -314,7 +314,13 @@
 
 .slideshow__slide-caption-subtitle {
     display: inline-block;
-    padding: 1.875rem 0;
+    color: white;
+    padding: 0.5rem 0 1rem;
+}
+
+.slideshow__slide-discription {
+    color: white;
+    padding: 0.5rem 0;
 }
 
 .slideshow__slide-caption-subtitle.-load {
@@ -645,7 +651,7 @@ strong {
 .js-parallax {
     transform: translateZ(0);
     will-change: transform;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
 }
 
 .scroll-content {
