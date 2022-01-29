@@ -194,7 +194,7 @@ class CreateParticles {
                     }
                 } else {
                     if (mouseDistance < this.data.area) {
-                        if (i % 5 == 0) {
+                        if (i % 5 === 0) {
                             const t = Math.atan2(dy, dx);
                             px -= 0.03 * Math.cos(t);
                             py -= 0.03 * Math.sin(t);
@@ -270,7 +270,7 @@ class CreateParticles {
         for (let x = 0; x < shapes.length; x++) {
             let shape = shapes[x];
 
-            const amountPoints = shape.type == "Path" ? this.data.amount / 2 : this.data.amount;
+            const amountPoints = shape.type === "Path" ? this.data.amount / 2 : this.data.amount;
 
             let points = shape.getSpacedPoints(amountPoints);
 

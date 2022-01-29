@@ -6,7 +6,6 @@ const Slider = ({ introRef }) => {
     const [maxSlide, setMaxSlide] = useState(0);
     const [showArrows, setShowArrows] = useState(true);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
 
     const data = useStaticQuery(graphql`
         query SliderQuery {
@@ -51,7 +50,7 @@ const Slider = ({ introRef }) => {
                 {data.map((slide, index) => (
                     <div
                         className={`slideshow__slide js-slider-home-slide ${
-                            index == currentSlide ? "is-current" : ""
+                            index === currentSlide ? "is-current" : ""
                         } ${index === (currentSlide - 1 + maxSlide) % maxSlide ? "is-prev" : ""} ${
                             index === (currentSlide + 1) % maxSlide ? "is-next" : ""
                         }`}
@@ -106,47 +105,49 @@ const Slider = ({ introRef }) => {
                     </div>
                 ))}
 
-                <div className="c-header-home_footer">
-                    <div className="o-container">
-                        <div className="c-header-home_controls -nomobile o-button-group">
-                            <div
-                                className="js-parallax is-inview"
-                                data-speed="1"
-                                data-position="top"
-                                data-target="#js-header"
-                            >
-                                <button
-                                    className="o-button -white -square -left js-slider-home-button js-slider-home-prev"
-                                    type="button"
-                                    onClick={() => prevSlide()}
+                {showArrows && (
+                    <div className="c-header-home_footer">
+                        <div className="o-container">
+                            <div className="c-header-home_controls -nomobile o-button-group">
+                                <div
+                                    className="js-parallax is-inview"
+                                    data-speed="1"
+                                    data-position="top"
+                                    data-target="#js-header"
                                 >
-                                    <span className="o-button_label">
-                                        <svg className="o-button_icon" role="img">
-                                            <use
-                                                xmlnsXlink="http://www.w3.org/1999/xlink"
-                                                xlinkHref="#arrow-prev"
-                                            ></use>
-                                        </svg>
-                                    </span>
-                                </button>
-                                <button
-                                    className="o-button -white -square js-slider-home-button js-slider-home-next"
-                                    type="button"
-                                    onClick={() => nextSlide()}
-                                >
-                                    <span className="o-button_label">
-                                        <svg className="o-button_icon" role="img">
-                                            <use
-                                                xmlnsXlink="http://www.w3.org/1999/xlink"
-                                                xlinkHref="#arrow-next"
-                                            ></use>
-                                        </svg>
-                                    </span>
-                                </button>
+                                    <button
+                                        className="o-button -white -square -left js-slider-home-button js-slider-home-prev"
+                                        type="button"
+                                        onClick={() => prevSlide()}
+                                    >
+                                        <span className="o-button_label">
+                                            <svg className="o-button_icon" role="img">
+                                                <use
+                                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                                    xlinkHref="#arrow-prev"
+                                                ></use>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <button
+                                        className="o-button -white -square js-slider-home-button js-slider-home-next"
+                                        type="button"
+                                        onClick={() => nextSlide()}
+                                    >
+                                        <span className="o-button_label">
+                                            <svg className="o-button_icon" role="img">
+                                                <use
+                                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                                    xlinkHref="#arrow-next"
+                                                ></use>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
                 <div className="pagination">
                     <div className="container">
                         {data.map((slide, index) => (
@@ -155,10 +156,7 @@ const Slider = ({ introRef }) => {
                                     index === currentSlide ? "is-current" : ""
                                 } data-slide=${index + 1}`}
                                 onClick={() => {
-                                    if (!isAnimating) {
-                                        // preventClick();
-                                        goToSlide(index);
-                                    }
+                                    goToSlide(index);
                                 }}
                             >
                                 {index + 1}

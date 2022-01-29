@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql, navigate, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import ParticleText from "../components/particle-text";
 import Gallery from "../components/gallery";
 

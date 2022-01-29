@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import "./index.css";
@@ -35,15 +35,15 @@ const Info = () => {
 
                     <div className="icon github">
                         <div className="tooltip">Github</div>
-                        <Link to={data.filter((link) => link.includes("github"))[0]}>
+                        <a href={data.filter((link) => link.includes("github"))[0]}>
                             <FontAwesomeIcon className="fab fa-github" icon={faGithub}></FontAwesomeIcon>
-                        </Link>
+                        </a>
                     </div>
                     <div className="icon youtube">
                         <div className="tooltip">Youtube</div>
-                        <Link to={data.filter((link) => link.includes("youtube"))[0]}>
+                        <a href={data.filter((link) => link.includes("youtube"))[0]}>
                             <FontAwesomeIcon className="fab fa-youtube" icon={faYoutube}></FontAwesomeIcon>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -24,8 +24,10 @@ const Gallery = () => {
             <div className="video-gallery">
                 <div className="video-container">
                     <iframe
-                        width={Math.min(800, 0.8 * window.screen.width)}
-                        height={Math.min(500, 0.5 * window.screen.width)}
+                        key="lightdance-video"
+                        title="lightdance-video"
+                        width="800"
+                        height="500"
                         src={`https://www.youtube.com/embed/${data[currentVideo].embedId}`}
                         frameBorder="0"
                         allowFullScreen
